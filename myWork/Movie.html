@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--引入下面这行（在很多网页都能copy）-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+		<title>Movie~Votes</title>
+		<!--引入三个最重要的文件：(注意不要写错！！  href和src)-->
+		<script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" >
+		
+
+		
+		<style>
+			body{
+				background-color:#eee;
+			}
+			/*以下是具体电影信息展示：*/		
+			.movie{
+				margin:10px;
+				padding-bottom:20px;
+				border-bottom:1px solid #ccc;
+			}		
+			.poster img{
+				width:80px;
+			}
+			.text img{
+				width:30px;
+			}
+			.num{
+				color:red;
+			}
+			/*以下是导航栏：*/
+			.navbar-header{
+				height:46px;
+				background-color:#f26522;
+			}
+			.header01 img{
+				width:84px;
+			}
+			.header02 img{
+				width:27px;
+				height:20px;
+			}.header03 img{
+				float:right;
+				width:52px;
+			}			
+			#city{
+				font-size:17px;
+				color:white;
+			}
+			#citytotal{
+				margin-left:10px;
+				/*margin-top:5px;*/
+			}
+			.sale-ticket{
+				margin:10px;
+				font-size:15px;
+				color:#999;
+				/*font-weight: 调粗细*/
+			}
+
+			/*以下是切换栏：*/
+			.nav-tabs li{
+				width:50%;
+				text-align:center;
+			}
+			.nav-tabs li #current {
+				color:red;
+				border-bottom-color:red;
+			}
+			
+			/*下面是固定底部的栏目：*/
+			.container{
+				height:55px;
+				background-color:white;
+				margin-top:5px;
+			}
+			
+			.gwl{
+				color:#eb6120;
+				font-size:18px;
+				margin-top:7px;				
+			}
+			h6{
+				margin-top:1px;
+			}
+			.bottom img{
+				width:48px;
+				/*margin-bottom:5px;*/
+			}
+			#open{
+				/*float:right;*/	
+				/*margin-left:40px;*/
+				width:50px;	
+				height:20px;
+				border:1px solid;
+			}
+			#gwl-div{
+				margin-right:50px;
+			}
+			
+
+		</style>	
+		
+	</head>
+	<body>
+		
+		<!--可拿这个测试文件有无引入成功。 success的按钮是绿色的-->
+		<!--<button class="btn btn-success">按钮</button>-->
+
+	<nav class="navbar">
+		<div class="container-fluid">	
+			<!--首页顶部标签条：-->
+			<div class="navbar-header">
+				<a class="navabar-brand header01" href="#">
+					<img  src="img/index-header01.png" alt="brand~area" />				
+				</a>
+				<span id="citytotal">
+					<em id="city">广州</em>
+					<a class="navabar-brand header02" href="#">
+						<img  src="img/index-header02.png" alt="brand~area" />				
+					</a>
+				</span>
+				<a class="navabar-brand header03" href="#">
+					<img  src="img/index-header03.png" alt="brand~area" />				
+				</a>
+			</div>
+			<!--页面切换栏：-->
+			<ul class="nav nav-tabs">
+  				<li role="presentation"  ><a href="#" id="current">Movie</a></li>
+ 				<li role="presentation"><a href="Cinema.html">Cinema</a></li>
+			</ul>
+			
+		</div>
+	</nav>			
+			
+
+				<!--用到“媒体对象”- 可在www.bootcss.com看-->
+				<p class="sale-ticket">正在售票</p>
+				<div class="media movie">  <!-- 起名movie-->
+					<div class="media-left poster">
+						<img class="media-object" src="img/poster01.png">
+					</div>
+					<div class="media-body text"  >
+						<h4 class="media-heading" >
+							摔跤吧！爸爸！
+						</h4>
+						<!--<span class="ui_movieType_img ui_typeImax3d"></span>-->
+							这是一部神奇的作品……慈父虎爸秒切换~~~父子共圆摔跤梦！	<br />	
+							<img src="img/xiayinhao.png"><br />							
+								<em class="num">400,000,000</em>人购票	
+					</div>
+				</div>
+
+		<!--固定页面下面的栏目：-->
+
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container">
+					<div class="media-left bottom">
+						<img class="media-object" src="img/logo-app.png">						
+					</div>
+					<div class="media-body text" id="gwl-div" >
+						<h4 class="media-heading gwl" >
+							格瓦拉生活
+						</h4>
+						<h6>你的文艺生活指南</h6>						
+					</div>
+					<div class="media-body text"  id="open">
+						<input type="button" value="立即打开" onclick="" />						
+					</div>
+					
+			</div>
+		</nav>
+
+		
+		
+	</body>
+</html>
