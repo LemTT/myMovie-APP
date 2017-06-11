@@ -17,7 +17,7 @@
 				background-color:#eee;
 			}
 			/*以下是具体电影信息展示：*/		
-			.movie{
+			.movie{   /*这里表示<class="media moive">*/
 				margin:10px;
 				padding-bottom:20px;
 				border-bottom:1px solid #ccc;
@@ -30,6 +30,30 @@
 			}
 			.num{
 				color:red;
+			}
+			#DD{
+				width:32px;
+				height:20px;
+				background-color:lightgreen;
+			}
+			#blue{
+				width:48px;
+				height:20px;
+				background-color:lightblue;
+			}
+			#ss{
+				float:right;
+				color:red;
+				font-size:25px;
+			}
+			sup{
+				font-size:18px;
+			}
+			#CINEMA{
+				display:none;
+			}
+			#MOVIE{
+				display:block;
 			}
 			/*以下是导航栏：*/
 			.navbar-header{
@@ -45,6 +69,7 @@
 			}.header03 img{
 				float:right;
 				width:52px;
+				
 			}			
 			#city{
 				font-size:17px;
@@ -60,16 +85,45 @@
 				color:#999;
 				/*font-weight: 调粗细*/
 			}
+			.dropdown{
+				width:32%;
+				height:48px;
+				display:none;
+				z-index:300;   /*这个与absolute的position联合使用，使显示与隐藏不影响其他部分！！*/
+				position:absolute;
+				right:0px;
+				top:46px;
+    							
+			}
+
+.dropdown-content {    			
+    background-color: #f26522;
+    /*min-width: 160px;*/
+    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+}
+.dropdown-content a {
+    color: white;
+    padding: 12px 12px;  /*上下，左右*/
+    text-decoration: none;  /*使没有下划线*/
+    display: inline-block;   /*使每一项单独成行*/
+   font-size:14px;
+}
 
 			/*以下是切换栏：*/
 			.nav-tabs li{
 				width:50%;
 				text-align:center;
 			}
-			.nav-tabs li #current {
+			.nav-tabs li a:hover{
 				color:red;
 				border-bottom-color:red;
 			}
+			#RF{
+				display:none;
+			}
+
+		
+
 			
 			/*下面是固定底部的栏目：*/
 			.container{
@@ -93,9 +147,22 @@
 			#open{
 				/*float:right;*/	
 				/*margin-left:40px;*/
-				width:50px;	
+				width:70px;	
 				height:20px;
-				border:1px solid;
+				border:1px solid #f26522;
+				float:right;
+				position:absolute;
+				bottom:20px;
+				right:50px;
+				color:#f26522;
+			}
+			#close{
+				/*border:1px solid grey;*/
+				position:absolute;
+				bottom:37px;
+				right:10px;
+				width:18px;
+				height:18px;
 			}
 			#gwl-div{
 				margin-right:50px;
@@ -103,6 +170,40 @@
 			
 
 		</style>	
+		
+		<script type="text/javascript">
+			
+//			var flag=true;
+//			function showMenu(){
+//				if(flag==true){
+//					document.getElementById("dropdown").style.display="block";
+//					flag=false;
+//				}
+//				if(flag==false){
+//					{document.getElementById("dropdown").style.display="none";
+//					flag=true;
+//				}
+//				
+//			}
+
+			function showMenu(){
+					document.getElementById("dropdown").style.display="block";
+				}
+			
+			function showCinema(){
+				document.getElementById("RF").style.display="block";
+				document.getElementById("CINEMA").style.display="block";
+				document.getElementById("MOVIE").style.display="none";
+			}
+			function showMovie(){
+				document.getElementById("RF").style.display="none";
+				document.getElementById("CINEMA").style.display="none";
+				document.getElementById("MOVIE").style.display="block";
+			}
+			
+		</script>
+		
+		
 		
 	</head>
 	<body>
@@ -115,30 +216,64 @@
 			<!--首页顶部标签条：-->
 			<div class="navbar-header">
 				<a class="navabar-brand header01" href="#">
-					<img  src="img/index-header01.png" alt="brand~area" />				
+					<img  src="img/index-header01.png" alt="brand1" />				
 				</a>
 				<span id="citytotal">
-					<em id="city">广州</em>
+					<em id="city">广州</em>   <!--em是斜体-->
 					<a class="navabar-brand header02" href="#">
-						<img  src="img/index-header02.png" alt="brand~area" />				
+						<img  src="img/index-header02.png" alt="brand2"  />				
 					</a>
 				</span>
-				<a class="navabar-brand header03" href="#">
-					<img  src="img/index-header03.png" alt="brand~area" />				
+				<a class="navabar-brand header03" href="#" >
+					<!--onclick的方法名不要带特殊符号！-->
+					<img  src="img/index-header03.png" alt="brand3" onclick="showMenu()"/>				
 				</a>
 			</div>
-			<!--页面切换栏：-->
+
+			<!--导航栏以下内容切换：-->
 			<ul class="nav nav-tabs">
-  				<li role="presentation"  ><a href="#" id="current">Movie</a></li>
- 				<li role="presentation"><a href="Cinema.html">Cinema</a></li>
+  				<li role="presentation"  ><a href="#" onclick="showMovie()">Movie</a></li>
+ 				<li role="presentation"><a href="#" onclick="showCinema()">Cinema</a></li>
+			</ul>
+			
+			
+			<!--含下拉箭头（region & feature）：-->
+			<ul class="nav nav-tabs" id="RF">
+  				<li><a class="dropdown-toggle" data-toggle="dropdown" href="#" 
+  				 	aria-haspopup="true" aria-expanded="false">
+      				region <span class="caret"></span>
+      				</a></li>     				
+ 				<li><a class="dropdown-toggle" data-toggle="dropdown" href="#" 
+  				 	aria-haspopup="true" aria-expanded="false">
+      				feature <span class="caret"></span>
+      			</a></li>
 			</ul>
 			
 		</div>
-	</nav>			
+	
+	<!--右上按钮的下拉菜单：-->		
+		<div class="dropdown" id="dropdown"> 
+  			<div class="dropdown-content" >
+    			<a href="#">
+    				<img src="img/index-header04.png" width="20px" height="20px"  />&nbsp&nbsp首页
+    			</a>
+    			<a href="#">
+    				<img src="img/index-header05.png" width="20px" height="20px"  />&nbsp&nbsp个人中心
+   				</a>
+ 			</div>
+		</div>
 			
+			
+			
+			
+	</nav>	
+	
 
+<div id="MOVIE">
 				<!--用到“媒体对象”- 可在www.bootcss.com看-->
 				<p class="sale-ticket">正在售票</p>
+				
+				<!--第一部电影：-->
 				<div class="media movie">  <!-- 起名movie-->
 					<div class="media-left poster">
 						<img class="media-object" src="img/poster01.png">
@@ -146,13 +281,100 @@
 					<div class="media-body text"  >
 						<h4 class="media-heading" >
 							摔跤吧！爸爸！
+							<label id="DD"> &nbsp3D</label>
+							<label id="ss">8<sup>.8</sup></label>    <!--sup上，sub下-->
 						</h4>
 						<!--<span class="ui_movieType_img ui_typeImax3d"></span>-->
 							这是一部神奇的作品……慈父虎爸秒切换~~~父子共圆摔跤梦！	<br />	
 							<img src="img/xiayinhao.png"><br />							
 								<em class="num">400,000,000</em>人购票	
 					</div>
+					
+					
 				</div>
+				
+				<!--第二部电影：-->
+				<div class="media movie">  <!-- 起名movie-->
+					<div class="media-left poster">
+						<img class="media-object" src="img/poster02.png">
+					</div>
+					<div class="media-body text"  >
+						<h4 class="media-heading" >
+							摔跤吧！爸爸！
+							<label id="blue">IMAX</label>
+							<label id="ss">10<sup>.7</sup></label>    <!--sup上，sub下-->
+						</h4>
+						<!--<span class="ui_movieType_img ui_typeImax3d"></span>-->
+							这是一部神奇的作品……慈父虎爸秒切换~~~父子共圆摔跤梦！	<br />	
+							<img src="img/xiayinhao.png"><br />							
+								<em class="num">400,000,000</em>人购票	
+					</div>
+					
+					
+				</div>
+				
+				<!--第三部电影：-->
+				<div class="media movie">  <!-- 起名movie-->
+					<div class="media-left poster">
+						<img class="media-object" src="img/poster03.png">
+					</div>
+					<div class="media-body text"  >
+						<h4 class="media-heading" >
+							摔跤吧！爸爸！
+							<!--<label id="DD"> &nbsp3D</label>-->
+							<label id="ss">9<sup>.5</sup></label>    <!--sup上，sub下-->
+						</h4>
+						<!--<span class="ui_movieType_img ui_typeImax3d"></span>-->
+							这是一部神奇的作品……慈父虎爸秒切换~~~父子共圆摔跤梦！	<br />	
+							<img src="img/xiayinhao.png"><br />							
+								<em class="num">400,000,000</em>人购票	
+					</div>
+					
+					
+				</div>
+				
+				<!--第四部电影：-->
+				<div class="media movie">  <!-- 起名movie-->
+					<div class="media-left poster">
+						<img class="media-object" src="img/poster04.png">
+					</div>
+					<div class="media-body text"  >
+						<h4 class="media-heading" >
+							摔跤吧！爸爸！
+							<!--<label id="DD"> &nbsp3D</label>-->
+							<label id="ss">7<sup>.8</sup></label>    <!--sup上，sub下-->
+						</h4>
+						<!--<span class="ui_movieType_img ui_typeImax3d"></span>-->
+							这是一部神奇的作品……慈父虎爸秒切换~~~父子共圆摔跤梦！	<br />	
+							<img src="img/xiayinhao.png"><br />							
+								<em class="num">400,000,000</em>人购票	
+					</div>
+					
+					
+				</div>
+
+
+</div>
+
+
+<div id="CINEMA">
+		
+				<!--用到“媒体对象”- 可在www.bootcss.com看-->
+				<div class="media movie">  <!-- 起名movie-->					
+					<div class="media-body text"  >
+						<h4 class="media-heading" >
+							24小时影院·影吧~
+						</h4>
+						<!--<span class="ui_movieType_img ui_typeImax3d"></span>-->
+							市桥街繁华路3号三楼	<br />	
+							<em>class放映1部余14场</em> 
+					</div>
+				</div>
+	
+	
+</div>
+
+
 
 		<!--固定页面下面的栏目：-->
 
@@ -167,10 +389,10 @@
 						</h4>
 						<h6>你的文艺生活指南</h6>						
 					</div>
-					<div class="media-body text"  id="open">
-						<input type="button" value="立即打开" onclick="" />						
+					<div id="open">立即打开</div>
+					<div id="close">
+						<img src="img/close-logo.png" 	width="100%"; height="100%" >
 					</div>
-					
 			</div>
 		</nav>
 

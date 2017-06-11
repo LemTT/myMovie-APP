@@ -20,6 +20,7 @@
 	
 	
 	
+	
 	1. 新建项目文件夹
 	2. 文件夹下- 右键git bash - "git init" - 出现隐藏文件夹“.git”
 	3. npm init
@@ -49,15 +50,20 @@
 	
 	
 	
-	14. 总文件夹下， git bash- ssh git@github.com
+	14. 总文件夹下， git bash- "ssh git@github.com"
 		- 成功后， 去网页登录自己的github
 		- 新建项目
 		- 复制ssh地址
 		
 	15. git bash- "git remote add origin (+刚才复制的地址)"
+		git add .
+		git commit -m "second commit"
+		git push -u origin master
+		-- 成功后， 即可看到自己的github网页上出现自己写的文件
 		
-		
-		
+	*别人访问你的文件： 
+		git init
+		git clone (+你的地址)
 		
 		
 		
