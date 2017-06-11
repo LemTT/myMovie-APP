@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>cities~</title>
+		<!--引入下面这行（在很多网页都能copy）-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+		<title>Movie~Votes</title>
+		<!--引入三个最重要的文件：(注意不要写错！！  href和src)-->
+		<script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" >
+		
+
+		<style>
+			
+			body{
+				background-color:#eee;
+			}
+			.city{
+				padding:0px;   /*每个单元格区域(包括内容与无内容区域)*/
+				text-align:center;
+
+			}
+			.thumbnail {   /* 每个a标签(内容区域)*/    /*这个是引入的css中写好的,拿来修改*/
+				/*border-collapse:collapse;*/  /* ??怎么合并边框??*/
+  			display: block;
+   			 padding:5px ; /*上下内边距*/
+   			padding-left:0px;
+   			padding-right:0px;
+   			 margin: 0px;   
+   			 line-height: 1.42857143;
+   			 background-color: #fff;
+    		border: 1px solid #ddd;
+   			 /*border-radius: 4px;*/
+  			  /*-webkit-transition: border .2s ease-in-out;*/
+  			  /*-o-transition: border .2s ease-in-out;*/
+   			 /*transition: border .2s ease-in-out;*/
+			}
+			.text{
+				font-size:16px;
+				padding:10px;
+			}
+			.AA{   /*全部*/
+				width:100%;								
+			}
+			#A{
+				float:left;
+				width:80%;	
+				/*border:1px solid;*/
+				
+			}
+			.top{   /*top+图标*/
+				float:right;
+				color:grey;
+				/*width:50%;*/
+				/*border:1px solid;*/
+			}
+			a{
+				text-decoration:none;
+			}
+			
+			
+			
+			
+		</style>
+
+	</head>
+	<body>
+		
+		
+		
+		<div class="text" id="header">
+			热门城市
+		</div>
+		
+		<!--栅格系统开始：-->
+		<div class="row">
+				<!--使在手机、平板、电脑上显示列数分别：1、2、4  （栅格系统自动把页面分为12列）-->
+				<!--使用栅格系统，内部都要用div！！-->
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">shanghai</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">beijing</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">GZ</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">wuhan</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">SZ</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">green hand</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">西瓜</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">pepper</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">orange</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">banana</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">apple</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">juice</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">奇异果</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">new bee</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">mountain</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">windy</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">monkey</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">pocket</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">花果山</a>					
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-6 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">hhhhh...</a>					
+				</div>
+						
+		</div>
+		
+		
+		<div class="text">
+			按字母排序
+		</div>
+		
+		<!--栅格系统开始：-->
+		<div class="row">
+				<!--使在手机、平板、电脑上显示列数分别：1、2、4  （栅格系统自动把页面分为12列）-->
+				<!--使用栅格系统，内部都要用div！！-->
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">A</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">B</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">C</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">D</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">E</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">F</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">G</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">H</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">I</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">J</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">K</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">LK</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">M</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">N</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">O</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">P</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">Q</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">R</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">S</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">T</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">U</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">V</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">W</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">X</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">Y</a>					
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">Z</a>					
+				</div>
+				
+		</div>
+
+
+	<div id="AA">
+		<div class="text" id="A">
+			A
+		</div>		
+		<div class="top">
+			<a href="#header">top
+ 			<span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>	</a>		
+		</div>	
+	</div>	
+		
+		<!--栅格系统开始：-->
+		<div class="row">
+				<!--使在手机、平板、电脑上显示列数分别：1、2、4  （栅格系统自动把页面分为12列）-->
+				<!--使用栅格系统，内部都要用div！！-->
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+		
+		</div>
+		
+		<div id="AA">
+		<div class="text" id="A">
+			B
+		</div>		
+		<div class="top">
+			<a href="#header">top
+ 			<span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>	</a>		
+		</div>	
+	</div>	
+		
+		<!--栅格系统开始：-->
+		<div class="row">
+				<!--使在手机、平板、电脑上显示列数分别：1、2、4  （栅格系统自动把页面分为12列）-->
+				<!--使用栅格系统，内部都要用div！！-->
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">BBB</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">B</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">B</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">B</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-2 city">
+					<!--只有这个thumbnail才能自动适应屏幕来调整图片大小 使完整显示-->
+					<a href="Movie.html" class="thumbnail">AAAAAA</a>					
+				</div>
+		
+		</div>
+		
+		
+		
+		
+		
+		
+	</body>
+</html>

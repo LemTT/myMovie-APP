@@ -109,6 +109,11 @@
    font-size:14px;
 }
 
+			/*.collapsed{
+				width:70px;
+				height:20px;
+			}*/
+
 			/*以下是切换栏：*/
 			.nav-tabs li{
 				width:50%;
@@ -120,6 +125,7 @@
 			}
 			#RF{
 				display:none;
+				background-color:lightyellow;
 			}
 
 		
@@ -155,6 +161,8 @@
 				bottom:20px;
 				right:50px;
 				color:#f26522;
+				text-align:center;
+				border-radius:5px;
 			}
 			#close{
 				/*border:1px solid grey;*/
@@ -173,22 +181,22 @@
 		
 		<script type="text/javascript">
 			
-//			var flag=true;
-//			function showMenu(){
-//				if(flag==true){
-//					document.getElementById("dropdown").style.display="block";
-//					flag=false;
-//				}
-//				if(flag==false){
-//					{document.getElementById("dropdown").style.display="none";
-//					flag=true;
-//				}
-//				
-//			}
-
+			
+			//通过设一变量来控制点击按钮下拉菜单的伸缩！
+			var flag=true;
 			function showMenu(){
-					document.getElementById("dropdown").style.display="block";
+				if(flag==true){
+//					document.getElementById("dropdown").style.display="block";
+					$("#dropdown").show();
+					flag=false;
 				}
+				else{   //这里不能斋if！  否则执行完上面的会直接继续来到下面这个if
+//					document.getElementById("dropdown").style.display="none";
+					$("#dropdown").hide();
+					flag=true;
+				}				
+			}
+
 			
 			function showCinema(){
 				document.getElementById("RF").style.display="block";
@@ -219,8 +227,8 @@
 					<img  src="img/index-header01.png" alt="brand1" />				
 				</a>
 				<span id="citytotal">
-					<em id="city">广州</em>   <!--em是斜体-->
-					<a class="navabar-brand header02" href="#">
+					<strong id="city">广州</strong>   <!--em是斜体-->
+					<a class="navabar-brand header02" href="City.html">
 						<img  src="img/index-header02.png" alt="brand2"  />				
 					</a>
 				</span>
@@ -228,6 +236,8 @@
 					<!--onclick的方法名不要带特殊符号！-->
 					<img  src="img/index-header03.png" alt="brand3" onclick="showMenu()"/>				
 				</a>
+				
+
 			</div>
 
 			<!--导航栏以下内容切换：-->
@@ -237,14 +247,17 @@
 			</ul>
 			
 			
-			<!--含下拉箭头（region & feature）：-->
+			<!--含下拉箭头（region & feature）：-->  
+			<!--可用div-->
 			<ul class="nav nav-tabs" id="RF">
   				<li><a class="dropdown-toggle" data-toggle="dropdown" href="#" 
   				 	aria-haspopup="true" aria-expanded="false">
+  				 	<img src="img/area-logo.png" width="20px;" height="20px;">
       				region <span class="caret"></span>
       				</a></li>     				
  				<li><a class="dropdown-toggle" data-toggle="dropdown" href="#" 
   				 	aria-haspopup="true" aria-expanded="false">
+  				 	<img src="img/feature-logo.png" width="20px;" height="20px;"> 				 	
       				feature <span class="caret"></span>
       			</a></li>
 			</ul>
@@ -261,9 +274,7 @@
     				<img src="img/index-header05.png" width="20px" height="20px"  />&nbsp&nbsp个人中心
    				</a>
  			</div>
-		</div>
-			
-			
+		</div>	
 			
 			
 	</nav>	
@@ -360,6 +371,42 @@
 <div id="CINEMA">
 		
 				<!--用到“媒体对象”- 可在www.bootcss.com看-->
+				<!--1.-->
+				<div class="media movie">  <!-- 起名movie-->					
+					<div class="media-body text"  >
+						<h4 class="media-heading" >
+							24小时影院·影吧~
+							<label id="ss">9<sup>.5</sup></label>    <!--sup上，sub下-->
+						</h4>
+						<!--<span class="ui_movieType_img ui_typeImax3d"></span>-->
+							这是一部神奇的作品……慈父虎爸秒切换~~~父子共圆摔跤梦！	<br />	
+							<img src="img/xiayinhao.png"><br />							
+								<em class="num">400,000,000</em>人购票	
+					</div>
+					
+					
+				</div>
+						</h4>
+						<!--<span class="ui_movieType_img ui_typeImax3d"></span>-->
+							市桥街繁华路3号三楼	<br />	
+							<em>class放映1部余14场</em> 
+					</div>
+				</div>
+				
+				<!--2.-->
+				<div class="media movie">  <!-- 起名movie-->					
+					<div class="media-body text"  >
+						<h4 class="media-heading" >
+							24小时影院·影吧~
+							<label id="ss">8<sup>.8</sup></label>    <!--sup上，sub下-->
+						</h4>
+						<!--<span class="ui_movieType_img ui_typeImax3d"></span>-->
+							市桥街繁华路3号三楼	<br />	
+							<em>class放映1部余14场</em> 
+					</div>
+				</div>
+	
+				<!--3.-->
 				<div class="media movie">  <!-- 起名movie-->					
 					<div class="media-body text"  >
 						<h4 class="media-heading" >
@@ -370,7 +417,55 @@
 							<em>class放映1部余14场</em> 
 					</div>
 				</div>
-	
+				
+				<!--4.-->
+				<div class="media movie">  <!-- 起名movie-->					
+					<div class="media-body text"  >
+						<h4 class="media-heading" >
+							24小时影院·影吧~
+						</h4>
+						<!--<span class="ui_movieType_img ui_typeImax3d"></span>-->
+							市桥街繁华路3号三楼	<br />	
+							<em>class放映1部余14场</em> 
+					</div>
+				</div>
+				
+				<!--5.-->
+				<div class="media movie">  <!-- 起名movie-->					
+					<div class="media-body text"  >
+						<h4 class="media-heading" >
+							24小时影院·影吧~
+							<label id="ss">6<sup>.8</sup></label>    <!--sup上，sub下-->
+						</h4>
+						<!--<span class="ui_movieType_img ui_typeImax3d"></span>-->
+							市桥街繁华路3号三楼	<br />	
+							<em>class放映1部余14场</em> 
+					</div>
+				</div>
+				
+				<!--6.-->
+				<div class="media movie">  <!-- 起名movie-->					
+					<div class="media-body text"  >
+						<h4 class="media-heading" >
+							24小时影院·影吧~
+						</h4>
+						<!--<span class="ui_movieType_img ui_typeImax3d"></span>-->
+							市桥街繁华路3号三楼	<br />	
+							<em>class放映1部余14场</em> 
+					</div>
+				</div>
+				
+				<!--7.-->
+				<div class="media movie">  <!-- 起名movie-->					
+					<div class="media-body text"  >
+						<h4 class="media-heading" >
+							24小时影院·影吧~
+						</h4>
+						<!--<span class="ui_movieType_img ui_typeImax3d"></span>-->
+							市桥街繁华路3号三楼	<br />	
+							<em>class放映1部余14场</em> 
+					</div>
+				</div>
 	
 </div>
 
